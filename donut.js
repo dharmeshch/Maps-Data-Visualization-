@@ -16,7 +16,7 @@ function renderLineGraph(area, depositsAmout){
         height = 450,
         radius = Math.min(width, height) / 2;
 
-        radius = radius -80;
+        radius = radius -100;
     
     var pie = d3.layout.pie()
         .sort(null)
@@ -37,7 +37,7 @@ function renderLineGraph(area, depositsAmout){
     var key = function(d){ return d.data.label; };
 
     var color = d3.scale.ordinal()
-        .domain(["2011", "2012", "2013", "2014", "2015", "2016", "2017"])
+        .domain(["2010","2011", "2012", "2013", "2014", "2015", "2016"])
         .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
     var data = dataforLineGraph[area];
@@ -59,8 +59,6 @@ function renderLineGraph(area, depositsAmout){
 
 
     function change(data) {
-
-        /* ------- PIE SLICES -------*/
         var slice = svg.select(".slices").selectAll("path.slice")
             .data(pie(data), key);
 
@@ -82,8 +80,6 @@ function renderLineGraph(area, depositsAmout){
 
         slice.exit()
             .remove();
-
-        /* ------- TEXT LABELS -------*/
 
         var text = svg.select(".labels").selectAll("text")
             .data(pie(data), key);
@@ -120,11 +116,16 @@ function renderLineGraph(area, depositsAmout){
                     return midAngle(d2) < Math.PI ? "start":"end";
                 };
             });
+            svg.append("text")
+                .attr("x", (width-580) / 2)
+                .attr("y", -200)
+                .attr("text-anchor", "middle")
+                .attr("class", "title")
+                .attr('font-weight', 'bold')
+                .text("Deposits made per year(2010-2016) in " + area);
 
         text.exit()
             .remove();
-
-        /* ------- SLICE TO TEXT POLYLINES -------*/
 
         var polyline = svg.select(".lines").selectAll("polyline")
             .data(pie(data), key);

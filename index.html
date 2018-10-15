@@ -1,6 +1,6 @@
 <html>
         <style>
-        body {
+        #map_election {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             width: 960px;
             position: relative;
@@ -21,24 +21,54 @@
                 stroke-width: 2px;
                 fill: none;
             }
-            /* .datamaps-legend {
-                color: Black;
-                right: 50px;
-                top: 0;
+            /* .datamaps-legend dt{
+                clear:both;
+                }
+            .datamaps-legend {
+                color: black;
+                right: -100px;
+                left: 400px !important;
+                top:75px !important;
+                top: 128px; 
                 position: relative;
                 display: inline-block;
-                text-align: center; */
+                text-align: center;
+            }  */
+            .datamaps-legend{
+                left: 250px !important;
             }
             </style>
     <body>
-        <div style="display: inline-flex;">
-                <div id="map_election" style="position: relative; width: 800px; height: 600px;">
-        
-                    </div>
-                    <div id = "donut" style="width: 800px; height: 500px; margin-top: 50px">
-            
-                    </div>
+        <div class = "page-header text-center">
+            <h2>Analysis of Chase Bank deposits data in United States</h2>
         </div>
+        <div id = "container"style=" width:1200px; margin-left:50px; margin-bottom : 25px">
+            <p>
+                In this Assignment, Chase Banks deposits data(2010-2016) has been used to visualize the deposits amount made by customers in United
+                States. Chase is currently present in 26 states in United States. The below GeoMap provides an analysis of the deposited amount per state
+                in USA. When hovered over the state it provides the total amount that is deposited by customers in that particular state over the span of
+                7 years(2010-2017). When clicked on the particular state it displays a second graph representing year wise deposited data. 
+            </p>
+        </div>
+        <div class = "row" style="border-style:solid; width:1200px; height: 550px; margin-left:50px;">
+                <div id="map_election" class = "col-sm-4" style="position: relative; width: 595px; height: 500px;">
+                    <!-- <h4 class="display-4 text-center"; style="top:20px">Chase Bank Deposits data map</h4> -->
+        
+                </div>
+                <div id = "donut"  class = "col-sm-4" style="width: 595px; height: 500px; margin-top: 20px">
+            
+                </div>
+                <div>
+
+                </div>
+        </div>
+        <div id = "container"style=" width:1200px; margin-left:50px; margin-top : 25px">
+                <p>
+                    From the visualizations presented above it can be observed that New York and Ohio states generated a deposits greater than
+                    billion dollars where as states such as Georgia and Idaho has generated deposits less that 10 million. From the GeoMap it can
+                    also be observed that Chase still has to establish its branches in many states in United States.  
+                 </p>
+            </div>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v3.min.js"></script>
@@ -47,4 +77,7 @@
     <script src="script1.js"></script>
     <script src="donut.js"></script>
     <script src="DataforLineGraph.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </html>
