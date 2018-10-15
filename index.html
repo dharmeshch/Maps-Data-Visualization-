@@ -50,6 +50,15 @@
                 7 years(2010-2017). When clicked on the particular state it displays a second graph representing year wise deposited data. 
             </p>
         </div>
+        <div class="dropdown"style = "left :300px">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#", onclick="renderMap()">Chloropleth-raw</a></li>
+                  <li><a href="#", onclick="renderMap2()">Chloropleth-Aggregated</a></li>
+                  <li><a href="#", onclick="renderMap2()">DotMap</a></li>
+                </ul>
+        </div>
         <div class = "row" style="border-style:solid; width:1200px; height: 550px; margin-left:50px;">
                 <div id="map_election" class = "col-sm-4" style="position: relative; width: 595px; height: 500px;">
                     <!-- <h4 class="display-4 text-center"; style="top:20px">Chase Bank Deposits data map</h4> -->
@@ -75,6 +84,7 @@
     <script src="/Users/dharmeshch/Desktop/HW3 DataVisualization/topojson.js"></script>
     <script src="/Users/dharmeshch/Desktop/HW3 DataVisualization/datamaps.js"></script>
     <script src="script1.js"></script>
+    <script src="script2.js"></script>
     <script src="donut.js"></script>
     <script src="DataforLineGraph.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

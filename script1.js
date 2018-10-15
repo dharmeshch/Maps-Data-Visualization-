@@ -1,4 +1,8 @@
 function renderMap(){
+    var clearSVG = d3.select("#map_election");
+    clearSVG.selectAll("*").remove();
+    var clearSVG1 = d3.select("#donut");
+    clearSVG1.selectAll("*").remove();
     var election = new Datamap({
         scope: 'usa',
         element: document.getElementById('map_election'),
@@ -13,11 +17,8 @@ function renderMap(){
         fills: {
         'greaterThan10Million': '#CC4731',
         'lessThan10Million': '#306596',
-        // 'lessThanMillion': '#CA5E5B',
         'greaterThanBillion': '#EDDC4E',
-        // 'Thousands': '#CA5E5B',
-        //'Light Republican': '#EAA9A8',
-        defaultFill: '#EAA9A8'
+         defaultFill: '#EAA9A8'
       },
       done: function(datamap) {
                 datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
@@ -132,8 +133,8 @@ function renderMap(){
         },
       };
       election.legend(l);
-}
-renderMap();
+} 
+ renderMap();
   function color(deposits){
       if(deposits<1000000){
           return "lessThanMillion";
@@ -148,4 +149,3 @@ renderMap();
         return "greaterThanBillion";
     }
   }
-  
