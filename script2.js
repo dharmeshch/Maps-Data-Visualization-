@@ -9,7 +9,7 @@ function renderMap2(){
         geographyConfig: {
           highlightBorderColor: '#bada55',
          popupTemplate: function(geography, data) {
-            return '<div class="hoverinfo">' + geography.properties.name + ' Total Deposits:' +  data.TotalDeposits + ' '
+            return '<div class="hoverinfo">' + geography.properties.name + ' Average Deposits per Branch:' +  data.TotalDeposits + ' '
           },
           highlightBorderWidth: 3
         },
